@@ -1,7 +1,7 @@
 module.exports = {
   apps: [
     {
-      name: "myapp",
+      name: "myapptemporary",
       script: "./src/index.js",
       watch: false,
       env: {
