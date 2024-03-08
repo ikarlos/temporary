@@ -1,0 +1,103 @@
+<!-- Profile Sidebar -->
+<div class="profile-sidebar">
+    <div class="widget-profile pro-widget-content">
+      <div class="profile-info-widget">
+        <a href="#" class="booking-doc-img">
+          <img src=" <%=loggedUser.avatar!=='default'? '/'+loggedUser.avatar.substring('src/public/'.length) :'data:image/jpeg;base64,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'   %>" alt="User Image">
+        </a>
+        <div class="profile-det-info">
+          <h3><%= loggedUser.fullName  %></h3>
+          <style>
+            #verification-status {
+                font-weight: bold;
+            }
+        </style>
+          <div class="patient-details">
+            <h5 class="mb-0 " id="special"><h5>
+              <h5 id="verification-status" class="mb-0 text-uppercase text-center">
+                <% if (doctorDetail.status === "approved") { %>
+                    <span class="text-success">Profile Verified <i class="fas fa-check-circle"></i></span>
+                <% } else { %>
+                    <span class="text-danger">Profile Not Verified</span>
+                <% } %>
+            </h5>
+            
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="dashboard-widget">
+      <nav class="dashboard-menu">
+        <ul>
+          <li class="active">
+            <a href="/myClinic/<%=clinicId%>">
+              <i class="fas fa-columns"></i>
+              <span>Dashboard</span>
+            </a>
+          </li>
+          <li>
+            <a href="/myClinic/mypatientHistory/<%=clinicId%>">
+              <i class="fas fa-user-injured"></i>
+              <span>My Patients</span>
+            </a>
+          </li>
+          <li>
+            <a href="/myClinic/scheduleTiming/<%=clinicId%>">
+              <i class="fas fa-hourglass-start"></i>
+              <span>Schedule Timings</span>
+            </a>
+          </li>
+          
+          
+          <li>
+            <a href="/myClinic/accountFile/<%=clinicId%>">
+              <i class="fas fa-file-invoice-dollar"></i>
+              <span>Accounts</span>
+            </a>
+          </li>
+          <!-- <li>
+            <a href="/myClinic/reviewFile/<%=clinicId%>">
+              <i class="fas fa-star"></i>
+              <span>Reviews</span>
+            </a>
+          </li> -->
+          <!-- <li>
+            <a href="/myClinic/messageFile/<%=clinicId%>">
+              <i class="fas fa-comments"></i>
+              <span>Message</span>
+              <small class="unread-msg">23</small>
+            </a>
+          </li> -->
+          <!-- <li>
+            <a href="doctor-change-password.html">
+              <i class="fas fa-lock"></i>
+              <span>Change Password</span>
+            </a>
+          </li> -->
+          <li>
+            <a href="/login">
+              <i class="fas fa-sign-out-alt"></i>
+              <span>Logout</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <script>
+		const specialInput = document.getElementById('special');
+		const input = '<%= doctorDetail.specialty %>';
+const words = input.split(' ');
+// Capitalize the first letter of each word except for "and"
+const capitalizedWords = words.map((word) => {
+  if (word.toLowerCase() !== 'and') {
+    return word.charAt(0).toUpperCase() + word.slice(1);
+  } else {
+    return word;
+  }
+});
+const output = capitalizedWords.join(' ');
+specialInput.innerHTML = output;
+	</script>
+  <!-- /Profile Sidebar -->

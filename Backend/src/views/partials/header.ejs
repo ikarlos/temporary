@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Get Doctor is an online telemedicine platform that connects patients to doctors , like scheduling appointments with  top doctors, clinics, and hospitals via voice, video call & chat."
+    />
+    <title>Get Doctor</title>
+    <script src="https://api.geoapify.com/v1/geocode/autocomplete?text=Mosco&apiKey=99d6c65c69374e6599c06423c5be87cf"></script>
+
+    <!-- Favicon -->
+    <link
+      rel="shortcut icon"
+      href="/assets/img/favicon.png"
+      type="image/x-icon"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+
+    <!-- Fontawesome CSS -->
+    <link
+      rel="stylesheet"
+      href="/assets/plugins/fontawesome/css/fontawesome.min.css"
+    />
+    <link rel="stylesheet" href="/assets/plugins/fontawesome/css/all.min.css" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Feathericon CSS -->
+    <link rel="stylesheet" href="/assets/css/feather.css" />
+
+    <!-- Datepicker CSS -->
+    <link
+      rel="stylesheet"
+      href="/assets/css/bootstrap-datetimepicker.min.css"
+    />
+
+    <!-- Owl Carousel CSS -->
+    <link rel="stylesheet" href="/assets/css/owl.carousel.min.css" />
+
+    <!-- Animation CSS -->
+    <link rel="stylesheet" href="/assets/css/aos.css" />
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="/assets/css/custom.css" />
+
+    <!-- Slick slider CSS -->
+    <link rel="stylesheet" href="/assets/css/slick.css" />
+
+    <!-- Swiper CSS -->
+    <link
+      rel="stylesheet"
+      href="/assets/plugins/swiper/css/swiper-bundle.min.css"
+    />
+    <!-- select CSS -->
+    <link rel="stylesheet" href="/assets/plugins/select2/css/select2.min.css" />
+    <style>
+      @media (min-width: 992px) {
+        .mobile {
+          display: none;
+          margin-top: 20px;
+        }
+      }
+
+      .profile-text {
+        color: white;
+        font-weight: bold;
+        text-decoration: none;
+        margin-left: 3vw;
+        margin-top: 2vw;
+        display: block;
+        padding: 10px;
+      }
+
+      .profile-circle {
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        overflow: hidden;
+        background-color: #f8f9fa;
+      }
+
+      /* Style for the user profile image */
+      .profile-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      /* Style for the user dropdown menu */
+      .dropdown-menu-profile {
+        position: absolute;
+        top: 60px;
+        right: 0;
+        z-index: 1000;
+        min-width: 150px;
+        padding: 10px;
+        border-radius: 5px;
+        background-color: #fff;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Style for the user dropdown menu items */
+      .dropdown-menu-profile a {
+        display: block;
+        padding: 8px 15px;
+        font-size: 14px;
+        color: #333;
+        text-decoration: none;
+        transition: background-color 0.3s;
+      }
+
+      .dropdown-menu-profile a:hover {
+        background-color: #f8f9fa;
+      }
+
+      .locationdrop {
+        z-index: 10000;
+        background-color: white;
+        border: 1px solid rgba(0, 0, 0, 0.305);
+        align-items: center;
+        justify-content: space-between;
+        position: absolute;
+        width: 100%;
+        height: 100px;
+      }
+
+      .locationdrop:hover {
+        cursor: pointer;
+      }
+    </style>
+    <style>
+      .dropdown-item {
+        padding: 10px;
+        cursor: pointer;
+      }
+
+      .dropdown-item:hover {
+        background-color: #f0f0f0; /* Change this to the color you want */
+      }
+      .btn-primary {
+        background-color: #0e82fd !important;
+        border-color: #0e82fd !important;
+      }
+      .reg-btn {
+        background-color: white !important;
+        border-color: white !important;
+      }
+      .reg-btn:hover {
+        background-color: #0e82fd !important;
+        border-color: #0e82fd !important;
+      }
+      .log-btn {
+        background-color: #0e82fd;
+        border-color: #0e82fd !important;
+      }
+      .log-btn:hover {
+        background-color: white !important;
+        border-color: white !important;
+      }
+    </style>
+    <style>
+      .faq-sec-twelve {
+        background-image: url(./assets/img/Bg.jpg);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Main Wrapper -->
+    <div class="main-wrapper">
+      <!-- Header -->
+      <header class="header header-custom header-fixed header-one">
+        <div class="container">
+          <nav class="navbar navbar-expand-lg header-nav">
+            <div class="navbar-header">
+              <a id="mobile_btn" href="javascript:void(0);">
+                <span class="bar-icon">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </span>
+              </a>
+              <a href="/" class="navbar-brand logo">
+                <img src="/assets/img/logo.png" class="img-fluid" alt="Logo" />
+              </a>
+            </div>
+            <div class="main-menu-wrapper">
+              <div class="menu-header">
+                <a href="index.html" class="menu-logo">
+                  <img
+                    src="/assets/img/logo.png"
+                    class="img-fluid"
+                    alt="Logo"
+                  />
+                </a>
+                <a
+                  id="menu_close"
+                  class="menu-close"
+                  href="javascript:void(0);"
+                >
+                  <i class="fas fa-times"></i>
+                </a>
+              </div>
+              <ul class="main-nav">
+                <li class="submenu">
+                  <a href="/">Home</a>
+                </li>
+                <li class="submenu">
+                  <a href="/findDoctor">Find Doctors</a>
+                </li>
+                <li class="submenu">
+                  <a href="/videoConsult">Video Consult</a>
+                  <ul class="submenu"></ul>
+                </li>
+                <li class="has-submenu">
+                  <a href="javascript:void(0);"
+                    >Emergency<i class="fas fa-chevron-down"></i
+                  ></a>
+                  <ul class="submenu">
+                    <li><a href="/ambulance">Ambulance Services</a></li>
+
+                    <li><a href="/oxygen">Oxygen Cylinders</a></li>
+                  </ul>
+                </li>
+                <li class="has-submenu">
+                  <a href="/labtest"
+                    >Lab Tests
+                    <!--<i class="fas fa-chevron-down"></i>--></a
+                  >
+                </li>
+
+                <li class="has-submenu">
+                  <a href="/Radiology"
+                    >Radiology<i class="fas fa-chevron-down"></i
+                  ></a>
+                  <ul class="submenu">
+                    <li><a href="/Radiology#mri">MRI</a></li>
+                    <li><a href="/Radiology#xray">X-Ray</a></li>
+                    <li><a href="/Radiology#Ultrasound">Ultrasound</a></li>
+                    <li><a href="/Radiology#endoscopy">Endoscopy</a></li>
+                    <li><a href="/Radiology#Angiography">Angiography</a></li>
+                    <li><a href="/Radiology#CT-Scan">CT-Scan</a></li>
+                  </ul>
+                </li>
+                <div class="mobile">
+                  <% if (loggedUser!="none" ) { %>
+                  <li class="nav-item dropdown has-arrow logged-item">
+                    <a
+                      href="#"
+                      class="dropdown-toggle nav-link"
+                      data-bs-toggle="dropdown"
+                    >
+                      <div class="profile-text">
+                        <span><%= loggedUser.fullName %></span>
+                        <i class="fas fa-chevron-down"></i>
+                      </div>
+                    </a>
+                    <div class="dropdown-menu 9dropdown-menu-profile">
+                      <a
+                        class="dropdown-item"
+                        href="<%= loggedUser.isDoctor ? '/myClinics' : '/patientDashboard' %> "
+                        >Doctor Dashboard</a
+                      >
+                      <!-- <a class="dropdown-item" href="/patientDashboard">For Patients</a> -->
+                      <a class="dropdown-item" href="/updateUser"
+                        >Profile Settings</a
+                      >
+                      <a class="dropdown-item" href="/logout">Logout</a>
+                    </div>
+                  </li>
+                  <% } else { %>
+                  <li class="login-link">
+                    <a
+                      href="login"
+                      style="color: white; margin-left: 6vw; margin-top: 3vw"
+                      >Login / Signup</a
+                    >
+                  </li>
+                  <% } %>
+                </div>
+              </ul>
+            </div>
+            <ul class="nav header-navbar-rht">
+              <!-- Cart -->
+
+              <!-- /Notifications -->
+
+              <!-- User Menu -->
+              <% if (loggedUser!="none" ) { %>
+
+								<li class="nav-item dropdown has-arrow logged-item">
+									<a href="#" class="dropdown-toggle nav-link" data-bs-toggle="dropdown">
+										<span class="user-img">
+											<img class="rounded-circle"
+												src=" <%= loggedUser.avatar!=='default'? '/'+loggedUser.avatar.substring('src/public/'.length) :'data:image/jpeg;base64,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'  %>" width="31"
+												alt="avatar">
+										</span>
+									</a>
+									<div class="dropdown-menu dropdown-menu-end">
+										<div class="user-header">
+											<div class="avatar avatar-sm">
+												<img src="<%= loggedUser.avatar!=='default'? '/'+loggedUser.avatar.substring('src/public/'.length) :'data:image/jpeg;base64,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'  %>"
+													alt="User Image" class="avatar-img rounded-circle">
+	
+											</div>
+											<div class="user-text">
+												<h6>
+													<%=loggedUser.fullName %>
+												</h6>
+												<p class="text-muted mb-0">
+													<%= loggedUser.isDoctor ? 'Doctor' : 'User' %>
+												</p>
+	
+											</div>
+										</div>
+										<a class="dropdown-item" href="<%= loggedUser.isDoctor ? '/myClinics' : '/patientDashboard' %> ">Dashboard</a>
+										<!-- <a class="dropdown-item" href="/patientDashboard">For Patients</a> -->
+										<a class="dropdown-item" href="/profile-settings">Profile Settings</a>
+										<a class="dropdown-item" href="/logout">Logout</a>
+									</div>
+								</li>
+								<% } else { %>
+	
+									<!--<li class="login-link"><a href="login">Login / Signup</a></li>-->
+	
+									<li class="register-btn" >
+										<a href="register" class="btn reg-btn"><i class="feather-user"></i>Register</a>
+									</li>
+									<li class="register-btn">
+										<a href="login" class="btn btn-primary log-btn" onmouseover="this.style.color='black'" onmouseout="this.style.color='white'"><i
+												class="feather-lock"></i>Login</a>
+									</li>
+									<% } %>
+							
+	
+						</ul>
+						
+					</nav>
+				</div>
+			</header>
